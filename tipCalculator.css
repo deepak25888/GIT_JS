@@ -1,0 +1,66 @@
+#tr1{
+    background-color:maroon;
+    color: white;
+    border-color: white;
+}
+
+
+
+.fldset{
+    
+        border-color: black;
+        margin-left: 250px;
+        margin-right: 250px;
+        background-color: brown;
+
+}
+
+
+
+  .button {
+    background-color: deeppink;
+    border: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .tr2  {
+    background-color: white;
+    border-color: none;
+  }
+
+  .tr3  {
+    background-color: white;
+    border-color: white;
+  }
+
+  .tr4  {
+    background-color: white;
+    border-color: white;
+  }
+
+  .tr5  {
+    background-color: white;
+    border-color: white;
+  }
+
+  .tr6  {
+    background-color: white;
+    border-color: white;
+  }
+
+  .tr7  {
+    background-color: white;
+  }
+
+  .tr8{
+      background-color: white;
+  }
+
+ 

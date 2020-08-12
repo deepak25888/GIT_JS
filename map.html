@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="interactiveMap.css">
+</head>
+<body  onload="onLoad()">
+  
+    <div align="center">
+        <h1>Interactive Map</h1>
+
+        <div class="title">
+            <ul>
+              <li><a class="title-blue" href="#" onmouseover="mapHoverOver(0)" onmouseout="mapHoverOut()">Offices</a></li>
+              <li><a class="title-red" href="#" onmouseover="mapHoverOver(1)" onmouseout="mapHoverOut()">Countryside</a></li>
+              <li><a class="title-green" href="#" onmouseover="mapHoverOver(2)" onmouseout="mapHoverOut()">Playground</a></li>
+              <li><a class="title-yellow" href="#" onmouseover="mapHoverOver(3)" onmouseout="mapHoverOut()">House</a></li>
+              <li><a class="title-pink" href="#" onmouseover="mapHoverOver(4)" onmouseout="mapHoverOut()">Industries</a></li>
+            </ul>    
+          </div>
+
+          <div><img class="image1" src="" alt=""></div>
+    </div>
+
+    <script>
+        function mapHoverOver(a){
+            if(a==0){
+                document.querySelector(".image1").setAttribute("src","http://www.sarabianchi.it/code-images/mappa-interattiva/img/map-blue.png");
+            }
+
+            if(a==1){
+                document.querySelector(".image1").setAttribute("src","http://www.sarabianchi.it/code-images/mappa-interattiva/img/map-red.png");
+            }
+           if(a==2){
+            document.querySelector(".image1").setAttribute("src","http://www.sarabianchi.it/code-images/mappa-interattiva/img/map-green.png");
+           }
+           if(a==3){
+            document.querySelector(".image1").setAttribute("src","http://www.sarabianchi.it/code-images/mappa-interattiva/img/map-yellow.png");
+           }
+           if(a==4){
+            document.querySelector(".image1").setAttribute("src","http://www.sarabianchi.it/code-images/mappa-interattiva/img/map-pink.png");
+           }
+    }
+        function mapHoverOut(){
+            document.querySelector(".image1").setAttribute("src","http://www.sarabianchi.it/code-images/mappa-interattiva/img/map-original.png");
+
+        }
+        function onLoad(){
+            document.querySelector(".image1").setAttribute("src","http://www.sarabianchi.it/code-images/mappa-interattiva/img/map-original.png");
+        }
+   
+    </script>
+   
+</body>
+</html>
+
+

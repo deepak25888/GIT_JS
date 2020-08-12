@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="defaultNames()">
+    <div align="center" >
+        <h1 id="header1"></h1>
+        <table>
+            <tr>
+                <td id="td1"></td>
+                <td id="td2"></td>
+            </tr>
+            <tr>
+                <td id="td3"><img id="img3" src=""></td>
+                <td id="td4"><img id="img4" src=""></td>
+            </tr>
+
+
+        </table>
+
+        <button onclick="rollTheDice()">
+            <h1>Roll The Dice<h1>
+        </button><br>
+        <button onclick="editNames()">
+            <h1>Edit Names<h1>
+        </button>
+
+    </div>
+
+    <script>
+
+        var player1="Player 1";
+        var player2="Player 2";
+
+        function rollTheDice() {
+            setTimeout(function () {
+                var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+                var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+
+                if (randomNumber1 == randomNumber2) {
+                    document.getElementById("header1").innerHTML = "<h1>It's Draw<h1>";
+                    document.getElementById("img3").setAttribute("src", "dice" + randomNumber1 + ".png");
+                    document.getElementById("img4").setAttribute("src", "dice" + randomNumber2 + ".png");
+
+                }
+                if (randomNumber1 > randomNumber2) {
+                    document.getElementById("header1").innerText = `${player1} wins`;
+                    document.getElementById("img3").setAttribute("src", "dice" + randomNumber1 + ".png");
+                    document.getElementById("img4").setAttribute("src", "dice" + randomNumber2 + ".png");
+                }
+                if (randomNumber1 < randomNumber2) {
+                    document.getElementById("header1").innerText = `${player2} wins`;
+                    document.getElementById("img3").setAttribute("src", "dice" + randomNumber1 + ".png");
+                    document.getElementById("img4").setAttribute("src", "dice" + randomNumber2 + ".png");
+                }
+
+
+            }, 1000);
+
+
+
+
+
+        }
+
+
+
+        function editNames() {
+            player1 = prompt("Enter player 1 name", "");
+            player2 = prompt("Enter player 2 name", "");
+
+            if (player1 != null && player2 == null) {
+                document.getElementById("td1").innerHTML = `<h1>${player1}<h1>`;
+                document.getElementById("td2").innerHTML = "";
+            }
+            if (player1 == null && player2 != null) {
+                document.getElementById("td1").innerHTML = "";
+                document.getElementById("td2").innerHTML = `<h1>${player2}<h1>`;
+            }
+            if (player1 != null && player2 != null) {
+                document.getElementById("td1").innerHTML = `<h1>${player1}<h1>`;
+                document.getElementById("td2").innerHTML = `<h1>${player2}<h1>`;
+            }
+            if (player1 == null && player2 == null) {
+                document.getElementById("td1").innerHTML = "";
+                document.getElementById("td2").innerHTML = "";
+            }
+
+
+        }
+
+        function defaultNames() {
+            document.getElementById("td1").innerHTML = "<h1>Player 1<h1>";
+            document.getElementById("td2").innerHTML = "<h1>Player 2</h1>";
+            document.getElementById("img3").setAttribute("src", "dice6.png");
+            document.getElementById("img4").setAttribute("src", "dice6.png");
+            document.getElementById("header1").innerHTML = "<h1>Let's Play<h1>";
+        }
+    </script>
+</body>
+
+</html>

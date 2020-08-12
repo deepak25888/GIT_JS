@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="tipCalculator.css">
+</head>
+
+<body>
+    <fieldset class="fldset">
+        <div align="center">
+
+            <table class="table" border-color="white">
+                <tr id="tr1">
+                    <td id="td1">
+                        <h1>TIP CALCULATOR</h1>
+                    </td>
+                </tr>
+
+                <tr class="tr2">
+                    <td >
+                        <h4>How much was your bill?</h4>
+                    </td>
+                </tr>
+                <tr class="tr3">
+                    <td>$<input placeholder="Bill Amount" id="billAmount">
+                        <input< /td>
+                </tr>
+                <tr class="tr4">
+                    <td>
+                        <h4>How was your service?</h4>
+                    </td>
+                </tr>
+                <tr class="tr5">
+                    <td><select id="service">
+                            <option value="0">--Choose an Option--</option>
+                            <option value="30">30%-Outstanding</option>
+                            <option value="20">20%-Good</option>
+                            <option value="15">15%-It was Ok</option>
+                            <option value="10">10%-Bad</option>
+                            <option value="5">5%-Terrible</option>
+                        </select></td>
+                </tr>
+                <tr class="tr6">
+                    <td>
+                        <h4>How many people are sharing the bill?</h4>
+                    </td>
+                </tr>
+                <tr class="tr7">
+                    <td><input placeholder="Number of People" id="noOfPeople">
+                        </input><b>people</b></td>
+                </tr>
+                <tr class="tr8">
+                  <td><p align="center"><button class="button" onclick="calculate()">Calculate</button></p></td> 
+                </tr>
+        </div>
+        </table>
+
+        
+
+        <p id="par1"></p>
+
+
+
+
+
+    </fieldset>
+
+    <script>
+        function calculate() {
+            var index = service.options[service.selectedIndex].value;
+            var billAmount = document.getElementById("billAmount").value;
+            var noOfPeople = document.getElementById("noOfPeople").value;
+
+            if (index == 0 || billAmount == "") {
+                alert("Please select a value");
+            }
+
+            if (index != 0 && billAmount != "" && noOfPeople == "") {
+                var ans = ((index / 100) * billAmount) / 1;
+                document.getElementById("par1").innerHTML = `<h1>TIP AMOUNT <br>$${ans}<h1>`;
+            }
+
+            if (index != 0 && billAmount != "" && noOfPeople != "") {
+                var ans = ((index / 100) * billAmount) / noOfPeople;
+                document.getElementById("par1").innerHTML = `<h1>TIP AMOUNT <br>$${ans} <br>each<h1>`;
+            }
+
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+
+
+
+</html>
